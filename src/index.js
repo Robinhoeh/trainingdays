@@ -50,7 +50,10 @@ const getDaysToTrain = (event) => {
   return eventTrainingTimes[event];//event is placeholder - ie Marathon
 };
 
+const getEventMessage = () => {
+	const myEvent = getRandomEvent();
+	console.log('Your event is a ' + myEvent + '. Your event activities consist of ' + getEventActivities(myEvent) + '. You have ' + getDaysToTrain(myEvent) +  ' days to train.');
+}
 
-getRandomEvent();
-console.log('Your event is a ' + 'placeholder' + '. Your event activities consist of ' + getEventActivities() + '. You have ' + getDaysToTrain() +  ' days to train.');
+getEventMessage();
 
