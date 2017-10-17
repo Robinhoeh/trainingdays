@@ -1,17 +1,23 @@
-let allEvents;
+//let allEvents; - removing from global scope - causes conflicts
 let event;
 const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
 
+const getAllEvents = () => {
+	return ['Marathon', 'Triathlon', 'Decathlon'];
+};
+
 /* this is used a few places and it is vulnerable */ 
 
+
 const getRandomEvent = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+	allEvents = getAllEvents();//replacing array below
+  //allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
   event = allEvents[Math.floor(Math.random() * allEvents.length)];
 };
 
 
 const getEventActivities = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+	allEvents = getAllEvents();
 
   if (!allEvents.includes(event)) {
     return null; 
@@ -33,7 +39,7 @@ const getEventActivities = () => {
 };
 
 const getDaysToTrain = () => {
-  allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
+	allEvents = getAllEvents();
   if (!allEvents.includes(event)) {
     return null; 
   }
