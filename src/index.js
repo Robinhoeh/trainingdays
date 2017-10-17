@@ -1,6 +1,6 @@
 //let allEvents; - removing from global scope - causes conflicts
 //let event; - removing from Global scope
-const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
+//const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };//only declared once - moving to getDaysToTrain
 
 const getAllEvents = () => {
 	return ['Marathon', 'Triathlon', 'Decathlon'];
@@ -46,6 +46,7 @@ const getDaysToTrain = (event) => {
     return null; 
   }
   
+  const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
   return eventTrainingTimes[event];
 };
 
