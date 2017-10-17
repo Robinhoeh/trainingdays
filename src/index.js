@@ -26,15 +26,15 @@ const getEventActivities = (event) => {
   }
   
   if (event === 'Marathon') {
-    const activities = ['Running'];
+    let activities = ['Running'];//changed from const to let to loosen scope 
     return activities.join(', '); 
   } 
   if (event === 'Triathlon') {
-    const activities = ['Running', 'Cycling', 'Swimming'];
+    let activities = ['Running', 'Cycling', 'Swimming'];
     return activities.join(', '); 
   } 
   if (event === 'Decathlon') {
-    const activities = ['Running', 'Hurdles', 'Javelin throw', 'Discus Throw', 'Shot put', 'High Jump'];
+    let activities = ['Running', 'Hurdles', 'Javelin throw', 'Discus Throw', 'Shot put', 'High Jump'];
     return activities.join(', '); 
   }
   
@@ -47,7 +47,7 @@ const getDaysToTrain = (event) => {
   }
   
   const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
-  return eventTrainingTimes[event];
+  return eventTrainingTimes[event];//event is placeholder - ie Marathon
 };
 
 
