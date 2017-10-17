@@ -1,5 +1,5 @@
 //let allEvents; - removing from global scope - causes conflicts
-let event;
+//let event; - removing from Global scope
 const eventTrainingTimes = {'Marathon': 50, 'Triathlon': 100, 'Decathlon': 200 };
 
 const getAllEvents = () => {
@@ -10,14 +10,16 @@ const getAllEvents = () => {
 
 
 const getRandomEvent = () => {
-	allEvents = getAllEvents();//replacing array below
+	const allEvents = getAllEvents();//replacing array below
   //allEvents = ['Marathon', 'Triathlon', 'Decathlon'];
-  event = allEvents[Math.floor(Math.random() * allEvents.length)];
+  //event = allEvents[Math.floor(Math.random() * allEvents.length)];
+  const event = allEvents[Math.floor(Math.random() * allEvents.length)];
+  return event;
 };
 
 
-const getEventActivities = () => {
-	allEvents = getAllEvents();
+const getEventActivities = (event) => {
+	const allEvents = getAllEvents();
 
   if (!allEvents.includes(event)) {
     return null; 
@@ -38,8 +40,8 @@ const getEventActivities = () => {
   
 };
 
-const getDaysToTrain = () => {
-	allEvents = getAllEvents();
+const getDaysToTrain = (event) => {
+	const allEvents = getAllEvents();
   if (!allEvents.includes(event)) {
     return null; 
   }
@@ -49,5 +51,5 @@ const getDaysToTrain = () => {
 
 
 getRandomEvent();
-console.log('Your event is a ' + event + '. Your event activities consist of ' + getEventActivities() + '. You have ' + getDaysToTrain() +  ' days to train.');
+console.log('Your event is a ' + 'placeholder' + '. Your event activities consist of ' + getEventActivities() + '. You have ' + getDaysToTrain() +  ' days to train.');
 
