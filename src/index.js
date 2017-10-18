@@ -51,9 +51,10 @@ const getDaysToTrain = (event) => {
 };
 
 const getEventMessage = () => {
-	const myEvent = getRandomEvent();
+	const myEvent = getRandomEvent();//randomly selects event from array
 	console.log('Your event is a ' + myEvent + '. Your event activities consist of ' + getEventActivities(myEvent) + '. You have ' + getDaysToTrain(myEvent) +  ' days to train.');
-}
+}//myEvent when passed  logs - An event at random - when used as param - runs through each functions if/else
+//myEvent param is a vehicle for info that doesnt hold a specific value
 
 getEventMessage();
 
